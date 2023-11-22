@@ -37,10 +37,10 @@
     <div class="board">
       <?php 
       
-      $colorList = ['white'];
+      $previous = 'white';
 
       for($i = 0; $i < 64; $i++) { 
-        $fill = $colorList[$i];;
+        $fill = $previous;
 
         if($i % 8 == 0 && $i != 0) {
           if($fill == 'white') {
@@ -51,9 +51,9 @@
         }
 
         if($fill == 'white') {
-          array_push($colorList, 'black');
+          $previous = 'black';
         } else {
-          array_push($colorList, 'white');
+          $previous = 'white';
         }
       ?>
         <div class="cell <?php echo $fill; ?>"></div>
